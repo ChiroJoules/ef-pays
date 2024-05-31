@@ -21,6 +21,7 @@
                     let titre = article.title.rendered;
                     let contenu = article.content.rendered;
                     let image = placeholderImageURL;
+                    let link = article.link;
                     if(article._embedded['wp:featuredmedia']){
                         image = article._embedded['wp:featuredmedia'][0].source_url;
                     }   
@@ -31,7 +32,7 @@
                     carte.classList.add("restapi__pays");
                     carte.innerHTML = `
                         <div class="titre__Image">
-                        <h3>${titre}</h3>
+                        <h3><a href="${link}" target="_blank">${titre}</a></h3>
                         <img src="${image}" alt="${titre}" class="image__pays" onerror="this.onerror=null; this.src='https://via.placeholder.com/150';">
                         </div>
                         <div class="contenu__pays">
