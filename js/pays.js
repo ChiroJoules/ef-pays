@@ -23,8 +23,10 @@
                     let image = placeholderImageURL;
                     if(article._embedded['wp:featuredmedia']){
                         image = article._embedded['wp:featuredmedia'][0].source_url;
-                    }                    
-                    contenu = truncateContent(contenu, 30);
+                    }   
+                    let tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = contenu;                 
+                    contenu = tempDiv.textContent || tempDiv.innerText || '';
                     let carte = document.createElement("div");
                     carte.classList.add("restapi__pays");
                     carte.innerHTML = `
@@ -32,7 +34,9 @@
                         <h3>${titre}</h3>
                         <img src="${image}" alt="${titre}" class="image__pays" onerror="this.onerror=null; this.src='https://via.placeholder.com/150';">
                         </div>
+                        <div class="contenu__pays">
                         <p>${contenu}</p>
+                        </div>
                     `;
                     restapi.appendChild(carte);
                 });

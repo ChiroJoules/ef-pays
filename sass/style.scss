@@ -19,13 +19,18 @@
 }
 
 .titre__Image{
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    text-align: center;
 }
 
 .image__pays{
     width: 150px;
     height: 100%;
     object-fit: cover;
+    margin: 1rem;
 }
 
 .contenu__restapi{
@@ -36,12 +41,14 @@
     gap: 2rem;
 }
 
+.contenu__pays{
+    margin: 1.5rem;
+}
+
 .restapi__pays{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     flex: 1 0 250px;
-    padding: 1rem;
+    padding: 2rem;
     align-items: center;
     background-color: hsl(167, 57%, 37%);
     box-shadow: inset 0px 0px 8px 5px hsl(167, 76%, 13%, 0.5);
