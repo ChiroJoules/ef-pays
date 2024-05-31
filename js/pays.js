@@ -3,7 +3,8 @@
   
     // Fonction pour "fetch" les categories des postes
     function fetchData(numero) {
-        let url = `https://gftnth00.mywhc.ca/tim17/wp-json/wp/v2/posts?categories=${numero}`;
+        let url = `https://gftnth00.mywhc.ca/tim17/wp-json/wp/v2/posts?categories=${numero}&_embed`;
+        let placeholderImageURL = 'https://via.placeholder.com/150';
         fetch(url)
             .then(function (response) {
                 if (!response.ok) {
@@ -19,12 +20,18 @@
                 data.forEach(function (article) {
                     let titre = article.title.rendered;
                     let contenu = article.content.rendered;
-                    //let image = extractImageFromContent(contenu);
+                    let image = placeholderImageURL;
+                    if(article._embedded['wp:featuredmedia']){
+                        image = article._embedded['wp:featuredmedia'][0].source_url;
+                    }                    
                     contenu = truncateContent(contenu, 30);
                     let carte = document.createElement("div");
-                    carte.classList.add("restapi__carte");
+                    carte.classList.add("restapi__pays");
                     carte.innerHTML = `
+                        <div class="titre__Image">
                         <h3>${titre}</h3>
+                        <img src="${image}" alt="${titre}" class="image__pays" onerror="this.onerror=null; this.src='https://via.placeholder.com/150';">
+                        </div>
                         <p>${contenu}</p>
                     `;
                     restapi.appendChild(carte);

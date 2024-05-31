@@ -18,19 +18,29 @@
     }
 }
 
+.titre__Image{
+
+}
+
+.image__pays{
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+}
+
 .contenu__restapi{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
 
-.restapi__carte{
+.restapi__pays{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     flex: 1 0 250px;
-    text-align: center;
     padding: 1rem;
     align-items: center;
     background-color: hsl(167, 57%, 37%);
