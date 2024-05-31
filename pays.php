@@ -10,7 +10,7 @@ Version: 1.0.0
 Description: Permet d'afficher les destinations qui répondent à certains pays
 */
 header("Access-Control-Allow-Origin: http://localhost:8080");
-function eddym_enqueue()
+function joules_enqueue()
 {
     // filemtime // retourne en milliseconde le temps de la dernière modification
     // plugin_dir_path // retourne le chemin du répertoire du plugin
@@ -50,12 +50,12 @@ function eddym_enqueue()
         'Suisse' => 26,
     ));
 }
-add_action('wp_enqueue_scripts', 'eddym_enqueue'); 
+add_action('wp_enqueue_scripts', 'joules_enqueue'); 
 
 /* Création de la liste des destinations en HTML */
 function creation_pays()
 {
-    $contenu = '<div class="categories-menu">
+    $contenu = '<div class="pays-menu">
                     <button class="bouton__pays" data-category="France" data-default="true">France</button>
                     <button class="bouton__pays" data-category="États-Unis">États-Unis</button>
                     <button class="bouton__pays" data-category="Canada">Canada</button>

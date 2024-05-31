@@ -2,8 +2,8 @@
     console.log("rest API")
   
     // Fonction pour "fetch" les categories des postes
-    function fetchData(category) {
-        let url = `https://gftnth00.mywhc.ca/tim17/wp-json/wp/v2/posts?categories=${category}`;
+    function fetchData(numero) {
+        let url = `https://gftnth00.mywhc.ca/tim17/wp-json/wp/v2/posts?categories=${numero}`;
         fetch(url)
             .then(function (response) {
                 if (!response.ok) {

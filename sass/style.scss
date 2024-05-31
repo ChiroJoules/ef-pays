@@ -1,12 +1,21 @@
-.categories-menu{
+.pays-menu{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 3rem;
+    @media (min-width: 768px){       
+        justify-content: space-evenly;
+    }
 }
 
 .bouton__pays{
-    flex: 0 0 100px;
+    flex: 0 0 120px;
     padding: 0.5rem;
+    margin: 0.5rem;
+    @media(min-width: 768px){       
+        flex: 0 0 140px;
+        padding: 0.5rem;
+    }
 }
 
 .contenu__restapi{
