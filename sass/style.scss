@@ -1,0 +1,36 @@
+.categories-menu{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.bouton__pays{
+    flex: 0 0 100px;
+    padding: 0.5rem;
+}
+
+.contenu__restapi{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.restapi__carte{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1 0 250px;
+    text-align: center;
+    padding: 1rem;
+    align-items: center;
+    background-color: hsl(167, 57%, 37%);
+    box-shadow: inset 0px 0px 8px 5px hsl(167, 76%, 13%, 0.5);
+    border: 2px white solid;
+}
+
+.restapi__carte > h3{
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: hsl(38, 100%, 47%);
+}
